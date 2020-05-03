@@ -15,12 +15,13 @@ library (Boruta) # Selecting Best Features
 # Read csv "Cleaned_Data_Full_dummies3.csv"
 data.fullClean <- read.csv(file.choose(), header=TRUE, sep=",", stringsAsFactors=FALSE)
 
-
-data.predicting<-subset(data.fullClean, Id > 1460) #withold 1000 datapoints into a "testing" data
+# Create subsets of data
+data.predicting<-subset(data.fullClean, Id > 1460) #withold 1460 datapoints into a "testing and training" data
 data.training<-subset(data.fullClean, Id <= 1000) #redefine the training data (around 70% vs 30%) 
 data.testing<-subset(data.fullClean, (Id> 1000 & Id <=1460)) #redefine the training data
 data.training.last <-subset(data.fullClean,  Id <=1460) #redefine the training + testing data for final prediction
 
+# Assign SalePrice to a variable and drop SalePrice
 data.fullClean.y <- data.fullClean$SalePrice
 data.fullClean$SalePrice <- NULL
 
