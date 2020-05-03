@@ -6,12 +6,10 @@
 #install.packages("fastDummies") # Creating dummies
 
 # Load libraries
-library(tidyverse)
+#library(tidyverse)
 library(dplyr)
-library(ggplot2)
+#library(ggplot2)
 library(mice) # Imputation
-library(caret) # Predict
-library (Boruta) # Selecting Best Features
 library(fastDummies) # Create dummies
 
 # Read csv
@@ -140,7 +138,8 @@ data1 <- subset(cleaned.data.full.dummies, Id<=1460)
 data2 <- subset(cleaned.data.full.dummies, Id> 1460) 
 
 data1$SalePrice <- SalePrice
-data2$SalePrice <- N/A
+data2$SalePrice <- NA
 
 cleaned.data.full.dummies <- rbind(data1,data2)
-write.csv(cleaned.data.full.dummies, file = "Cleaned_Data_Full_dummies3.csv") # export the cleaned data into a CSV file
+
+write.csv(cleaned.data.full.dummies, file = "Cleaned_Data_Full_dummies300.csv") # export the cleaned data into a CSV file
