@@ -140,7 +140,7 @@ data1 <- subset(cleaned.data.full.dummies, Id<=1460)
 data2 <- subset(cleaned.data.full.dummies, Id> 1460) 
 
 data1$SalePrice <- SalePrice
-data2$SalePrice <- NULL
+data2$SalePrice <- N/A
 
 cleaned.data.full.dummies <- rbind(data1,data2)
 write.csv(cleaned.data.full.dummies, file = "Cleaned_Data_Full_dummies3.csv") # export the cleaned data into a CSV file
