@@ -62,7 +62,7 @@ percent.errors <- abs((data.testing$SalePrice-predicted.prices.testing)/data.tes
 mean(percent.errors) #display Mean Absolute Percentage Error (MAPE)
 
 ## Step Backward
-fit.log.step<-step(lm(log(SalePrice)~ log(GrLivArea)+ log(GarageArea) + GarageCars + log(TotalBsmtSF) + OverallQual + 1stFlrSF + ExterQual_TA + FullBath,  data=data.training),direction="backward")
+fit.log.step<-step(lm(log(SalePrice)~ log(GrLivArea)+ log(GarageArea) + GarageCars + log(TotalBsmtSF) + OverallQual + X1stFlrSF + ExterQual_TA + FullBath,  data=data.training),direction="backward")
 summary(fit.log.step)
 predicted.prices.testing<-exp(predict(fit.log.step, data.testing)) #predict the prices for testing the model
 
@@ -70,7 +70,7 @@ percent.errors <- abs((data.testing$SalePrice-predicted.prices.testing)/data.tes
 mean(percent.errors) #display Mean Absolute Percentage Error (MAPE)
 
 ## Step Both
-fit.log.step<-step(lm(log(SalePrice)~ log(GrLivArea)+ log(GarageArea) + GarageCars + log(TotalBsmtSF) + OverallQual + 1stFlrSF + ExterQual_TA + FullBath,  data=data.training),direction="both")
+fit.log.step<-step(lm(log(SalePrice)~ log(GrLivArea)+ log(GarageArea) + GarageCars + log(TotalBsmtSF) + OverallQual + X1stFlrSF + ExterQual_TA + FullBath,  data=data.training),direction="both")
 summary(fit.log.step)
 
 predicted.prices.testing<-exp(predict(fit.log.step, data.testing)) #predict the prices for testing the model
