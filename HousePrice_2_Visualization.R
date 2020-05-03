@@ -8,12 +8,9 @@
 
 # Load libraries
 library(corrplot)
-library(tidyverse)
 library(dplyr)
 library(sqldf)
 library(ggplot2)
-library(mice) # Imputation
-library(caret) # Predict
 
 
 # Read csv
@@ -66,7 +63,7 @@ cor(datatrain.selected) # correlation stats
 plot(data.train$SalePrice ~ data.train$GrLivArea)
 plot(data.train$SalePrice ~ data.train$OverallQual) 
 plot(data.train$SalePrice ~ data.train$GarageCars) 
-plot(data.train$SalePrice ~ data.train$KitchenQual_Ex) 
+
 #
 #
 # Plot simple predicted SalePrice with cleaned file

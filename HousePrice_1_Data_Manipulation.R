@@ -6,9 +6,7 @@
 #install.packages("fastDummies") # Creating dummies
 
 # Load libraries
-#library(tidyverse)
 library(dplyr)
-#library(ggplot2)
 library(mice) # Imputation
 library(fastDummies) # Create dummies
 
